@@ -1,0 +1,1 @@
+# plugins-disable-block-editor-fullscreen-mode
