@@ -16,7 +16,7 @@
  * Plugin Name:       Disable Block Editor FullScreen mode
  * Plugin URI:        https://wpankit.com/
  * Description:       This plugin is useful to Disable Block Editor default FullScreen mode in Latest WordPress 5.4+
- * Version:           3.0.0
+ * Version:           3.1.0
  * Author:            Ankit Panchal
  * Author URI:        https://wpankit.com/
  * License:           GPL-2.0+
@@ -37,7 +37,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.1.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'DISABLE_BLOCK_EDITOR_FULLSCREEN_MODE_VERSION', '3.0.0' );
+define( 'DISABLE_BLOCK_EDITOR_FULLSCREEN_MODE_VERSION', '3.1.0' );
 define ( 'DBEF_REQUIRED_WP_VERSION', '5.4' ) ;
 
 register_activation_hook( __FILE__, 'dbef_activate_plugin' );
@@ -83,43 +83,3 @@ function dbef_deactivation_notice () {
 }
 
 
-
-
-// Function to display the dismissible advertisement bar
-function display_custom_advertisement_dbefm() {
-    // Check if the user has dismissed the ad already
-    if (get_user_meta(get_current_user_id(), 'dismiss_custom_ad_dbefm', true)) {
-        return; // Don't show the ad if it has been dismissed
-    }
-
-    echo '<div class="notice notice-info is-dismissible" id="custom-advertisement-bar-dbefm">';
-    echo '<p><strong>Replace 25+ Plugins with Just One!</strong> Try UltimaKit for WP – the all-in-one WordPress toolkit for performance, security, and customization. <a href="https://wpultimakit.com/features/" target="_blank">Learn more</a> <strong></strong></p>';
-    echo '</div>';
-}
-add_action('admin_notices', 'display_custom_advertisement_dbefm');
-
-// Function to store the dismissed state using AJAX
-function custom_advertisement_dismiss_dbefm() {
-    update_user_meta(get_current_user_id(), 'dismiss_custom_ad_dbefm', true);
-}
-add_action('wp_ajax_custom_advertisement_dismiss_dbefm', 'custom_advertisement_dismiss_dbefm');
-
-// Enqueue the script to handle the dismiss action via AJAX
-function custom_advertisement_enqueue_script_dbefm() {
-    ?>
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            // When the dismiss button is clicked, trigger the AJAX call
-            $(document).on('click', '.notice.is-dismissible', function() {
-                var adBar = $(this).attr('id');
-                if (adBar === 'custom-advertisement-bar-dbefm') {
-                    $.post(ajaxurl, {
-                        action: 'custom_advertisement_dismiss_dbefm'
-                    });
-                }
-            });
-        });
-    </script>
-    <?php
-}
-add_action('admin_footer', 'custom_advertisement_enqueue_script_dbefm');
