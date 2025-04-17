@@ -16,7 +16,7 @@
  * Plugin Name:       Disable Block Editor FullScreen mode
  * Plugin URI:        https://wpankit.com/
  * Description:       This plugin is useful to Disable Block Editor default FullScreen mode in Latest WordPress 5.4+
- * Version:           3.2.0
+ * Version:           3.2.1
  * Author:            Ankit Panchal
  * Author URI:        https://wpankit.com/
  * License:           GPL-2.0+
@@ -37,7 +37,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.1.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'DISABLE_BLOCK_EDITOR_FULLSCREEN_MODE_VERSION', '3.2.0' );
+define( 'DISABLE_BLOCK_EDITOR_FULLSCREEN_MODE_VERSION', '3.2.1' );
 define ( 'DBEF_REQUIRED_WP_VERSION', '5.4' ) ;
 
 register_activation_hook( __FILE__, 'dbef_activate_plugin' );
