@@ -1,10 +1,10 @@
 === Disable Block Editor FullScreen mode ===
 Contributors: ankitmaru
-Donate link: https://wpankit.com/
+Donate link: https://xwpankit.com/
 Tags: gutenberg editor, block editor, gutenberg block editor, wordpress editor
 Requires at least: 5.4
-Tested up to: 6.7
-Stable tag: 3.2.1
+Tested up to: 6.8
+Stable tag: 3.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,9 @@ e.g.
 Nop, Minimum 5.4 WP Version required.
 
 == Changelog ==
+
+= 3.2.2 - 02-06-2025 =
+* Compatibility tested & Tested with the latest WordPress version 6.8.
 
 = 3.2.1 - 18-04-2025 =
 * Compatibility tested & Tested with the latest WordPress version 6.8.
