@@ -1,10 +1,10 @@
 === Disable Block Editor FullScreen mode ===
 Contributors: ankitmaru
-Donate link: https://xwpankit.com/
+Donate link: https://wpankit.com/
 Tags: gutenberg editor, block editor, gutenberg block editor, wordpress editor
 Requires at least: 5.4
-Tested up to: 6.8
-Stable tag: 3.2.4
+Tested up to: 6.9
+Stable tag: 4.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,8 @@ This plugin is useful to Disable Block Editor default FullScreen mode in Latest 
 <li><a href="https://wordpress.org/plugins/ultimakit-for-wp/">The Essential WordPress Toolkit – UltimaKit For WP</a></li>
 <li><a href ="https://wordpress.org/plugins/like-dislike-for-wp/">Like Dislike For WP</a></li>
 <li><a href="https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/">Hide Admin Bar Based on User Roles
+</a></li>
+<li><a href="https://wordpress.org/plugins/page-visit-counter-analytics/">Page Visit Counter Analytics
 </a></li>
 </ol>
 
@@ -37,6 +39,12 @@ e.g.
 Nop, Minimum 5.4 WP Version required.
 
 == Changelog ==
+
+= 4.1.1 - 31-01-2026 =
+* Compatibility tested & Tested with the latest WordPress version.
+
+= 4.0.0 - 25-11-2025 =
+* Compatibility tested & Tested with the latest WordPress version.
 
 = 3.2.4 - 27-08-2025 =
 * Compatibility tested & Tested with the latest WordPress version 6.8.
