@@ -16,8 +16,8 @@
  * Plugin Name:       Disable Block Editor FullScreen mode
  * Plugin URI:        https://pluginstack.dev/
  * Description:       This plugin is useful to Disable Block Editor default FullScreen mode in Latest WordPress 5.4+
- * Version:           4.1.1
- * Author:            Ankit Panchal
+ * Version:           4.2.0
+ * Author:            PluginStackDev
  * Author URI:        https://wpankit.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -37,7 +37,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.1.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'DISABLE_BLOCK_EDITOR_FULLSCREEN_MODE_VERSION', '4.1.0' );
+define( 'DISABLE_BLOCK_EDITOR_FULLSCREEN_MODE_VERSION', '4.2.0' );
 define ( 'DBEF_REQUIRED_WP_VERSION', '5.4' ) ;
 
 register_activation_hook( __FILE__, 'dbef_activate_plugin' );
@@ -80,4 +80,34 @@ function dbef_deactivation_notice () {
 	$class = 'notice notice-error';
 	$message = __( 'Plugin Deactivated', 'dbef-plugin' );
 	printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
+}
+
+
+
+/* Show a small promotional notice for PluginStack bundle. */
+add_action( 'admin_notices', 'dbef_pluginstack_promo_notice' );
+function dbef_pluginstack_promo_notice() {
+	$dismissed = get_option( 'dbef_pluginstack_promo_dismissed' );
+	if ( $dismissed ) {
+		return;
+	}
+	?>
+	<div class="notice dbef-promo-notice" style="border-left-color:#6c47ff;padding:8px 12px;display:flex;align-items:center;gap:10px;">
+		<span style="font-size:18px;">⚡</span>
+		<p style="margin:0;font-size:13px;">
+			<strong>Enjoying this plugin?</strong> Get the <a href="https://pluginstack.dev/?utm_source=disable-block-editor-fullscreen-mode&utm_medium=admin_notice&utm_campaign=pluginstack_bundle" target="_blank" rel="noopener noreferrer" style="color:#6c47ff;font-weight:600;">PluginStack Bundle</a> — AI, WooCommerce, Gravity Forms, Analytics &amp; more. All current + upcoming plugins. <strong>One-time payment, no subscription.</strong>
+			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'dbef_dismiss_promo', '1' ), 'dbef_dismiss_promo' ) ); ?>" style="margin-left:10px;color:#999;font-size:12px;text-decoration:none;"><?php esc_html_e( 'Dismiss', 'disable-block-editor-fullscreen-mode' ); ?></a>
+		</p>
+	</div>
+	<?php
+}
+
+/* Handle dismiss action for PluginStack promo notice. */
+add_action( 'admin_init', 'dbef_handle_promo_dismiss' );
+function dbef_handle_promo_dismiss() {
+	if ( isset( $_GET['dbef_dismiss_promo'] ) && check_admin_referer( 'dbef_dismiss_promo' ) ) {
+		update_option( 'dbef_pluginstack_promo_dismissed', true );
+		wp_safe_redirect( remove_query_arg( array( 'dbef_dismiss_promo', '_wpnonce' ) ) );
+		exit;
+	}
 }

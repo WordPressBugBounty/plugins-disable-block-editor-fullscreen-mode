@@ -4,25 +4,31 @@ Donate link: https://wpankit.com/
 Tags: gutenberg editor, block editor, gutenberg block editor, wordpress editor
 Requires at least: 5.4
 Tested up to: 6.9
-Stable tag: 4.1.1
+Stable tag: 4.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin is useful to Disable Block Editor default FullScreen mode in Latest WordPress 5.4+
+Disable the Block Editor fullscreen mode by default in WordPress 5.4+. Lightweight, no settings needed — just activate and it works.
 
 == Description ==
 
-This plugin is useful to Disable Block Editor default FullScreen mode in Latest WordPress 5.4+
+Tired of the WordPress Block Editor launching in fullscreen every time? This plugin automatically disables the default fullscreen mode in the Gutenberg editor for WordPress 5.4 and above. No configuration required — simply install, activate, and get straight to editing without the distraction.
 
-== You can check our other plugins: ==
-<ol>
-<li><a href="https://wordpress.org/plugins/ultimakit-for-wp/">The Essential WordPress Toolkit – UltimaKit For WP</a></li>
-<li><a href ="https://wordpress.org/plugins/like-dislike-for-wp/">Like Dislike For WP</a></li>
-<li><a href="https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/">Hide Admin Bar Based on User Roles
-</a></li>
-<li><a href="https://wordpress.org/plugins/page-visit-counter-analytics/">Page Visit Counter Analytics
-</a></li>
-</ol>
+**Features:**
+
+* Automatically disables Block Editor fullscreen mode on load
+* Zero configuration — works out of the box
+* Lightweight with no impact on performance
+* Compatible with the latest WordPress version
+
+== More Plugins by the Author ==
+
+If you find this plugin useful, you may also like these free plugins by the same author:
+
+* [UltimaKit For WP](https://wordpress.org/plugins/ultimakit-for-wp/) — Essential WordPress toolkit
+* [Like Dislike For WP](https://wordpress.org/plugins/like-dislike-for-wp/) — Add like/dislike voting to posts
+* [Hide Admin Bar Based on User Roles](https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/) — Control admin bar visibility by role
+* [Page Visit Counter Analytics](https://wordpress.org/plugins/page-visit-counter-analytics/) — Simple page view tracking
 
 == Installation ==
 
@@ -39,6 +45,9 @@ e.g.
 Nop, Minimum 5.4 WP Version required.
 
 == Changelog ==
+
+= 4.2.0 - 24-02-2026 =
+* Compatibility tested & Tested with the latest WordPress version.
 
 = 4.1.1 - 31-01-2026 =
 * Compatibility tested & Tested with the latest WordPress version.
