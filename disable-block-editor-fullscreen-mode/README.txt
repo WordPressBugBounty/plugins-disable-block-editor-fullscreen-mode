@@ -3,8 +3,8 @@ Contributors: ankitmaru
 Donate link: https://wpankit.com/
 Tags: gutenberg editor, block editor, gutenberg block editor, wordpress editor
 Requires at least: 5.4
-Tested up to: 6.9
-Stable tag: 4.2.0
+Tested up to: 7.0
+Stable tag: 4.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,9 @@ e.g.
 Nop, Minimum 5.4 WP Version required.
 
 == Changelog ==
+
+= 4.3.0 - 07-07-2026 =
+* Compatibility tested & Tested with the latest WordPress version.
 
 = 4.2.0 - 24-02-2026 =
 * Compatibility tested & Tested with the latest WordPress version.
