@@ -8,21 +8,20 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://pluginstack.dev/
+ * @link              https://wpankit.com/
  * @since             1.1.0
  * @package           Disable_Block_Editor_Fullscreen_Mode
  *
  * @wordpress-plugin
  * Plugin Name:       Disable Block Editor FullScreen mode
- * Plugin URI:        https://pluginstack.dev/
- * Description:       This plugin is useful to Disable Block Editor default FullScreen mode in Latest WordPress 5.4+
- * Version:           4.3.1
- * Author:            PluginStackDev
+ * Plugin URI:        https://wordpress.org/plugins/disable-block-editor-fullscreen-mode/
+ * Description:       Opens the block editor with the WordPress admin menu in view, instead of fullscreen. No settings needed.
+ * Version:           4.3.2
+ * Author:            WPAnkit
  * Author URI:        https://wpankit.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       disable-block-editor-fullscreen-mode
- * Domain Path:       /languages
  *
  */
 /* Code Credits: Jean-Baptiste Audras */
@@ -37,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.1.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'DISABLE_BLOCK_EDITOR_FULLSCREEN_MODE_VERSION', '4.3.1' );
+define( 'DISABLE_BLOCK_EDITOR_FULLSCREEN_MODE_VERSION', '4.3.2' );
 define ( 'DBEF_REQUIRED_WP_VERSION', '5.4' ) ;
 
 register_activation_hook( __FILE__, 'dbef_activate_plugin' );
@@ -57,7 +56,7 @@ if ( $wp_version < DBEF_REQUIRED_WP_VERSION ) {
 /* hook to disable the fullscreen mode in editor. */
 add_action( 'enqueue_block_editor_assets','dbef_disable_editor_fullscreen_by_default' );
 function dbef_disable_editor_fullscreen_by_default() {
-	$script = "jQuery( window ).load(function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
+	$script = "window.addEventListener( 'load', function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
 	wp_add_inline_script( 'wp-blocks', $script );
 }
 
@@ -71,13 +70,13 @@ function dbef_deactivate_plugin_now() {
 /* Show warning if WordPress version is not greater than or equal to 5.4 */
 function dbef_errormsg () {
 	$class = 'notice notice-error';
-	$message = __( 'Error you did not meet the WordPress minimum version 5.4', 'dbef-plugin' );
-	printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
+	$message = __( 'Error you did not meet the WordPress minimum version 5.4', 'disable-block-editor-fullscreen-mode' );
+	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
 }
 
 /* Show plugin deactivation notice if WordPress version not compatible. */
 function dbef_deactivation_notice () {
 	$class = 'notice notice-error';
-	$message = __( 'Plugin Deactivated', 'dbef-plugin' );
-	printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
+	$message = __( 'Plugin Deactivated', 'disable-block-editor-fullscreen-mode' );
+	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
 }

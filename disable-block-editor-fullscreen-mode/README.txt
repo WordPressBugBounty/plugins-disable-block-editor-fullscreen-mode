@@ -1,52 +1,78 @@
 === Disable Block Editor FullScreen mode ===
 Contributors: ankitmaru
 Donate link: https://wpankit.com/
-Tags: gutenberg editor, block editor, gutenberg block editor, wordpress editor
+Tags: block editor, fullscreen, gutenberg editor, gutenberg block editor, wordpress editor
 Requires at least: 5.4
 Tested up to: 7.1
-Stable tag: 4.3.1
+Stable tag: 4.3.2
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Disable the Block Editor fullscreen mode by default in WordPress 5.4+. Lightweight, no settings needed — just activate and it works.
+Open the block editor with the WordPress admin menu in view, instead of fullscreen. No settings: activate it and you're done.
 
 == Description ==
 
-Tired of the WordPress Block Editor launching in fullscreen every time? This plugin automatically disables the default fullscreen mode in the Gutenberg editor for WordPress 5.4 and above. No configuration required — simply install, activate, and get straight to editing without the distraction.
+Since WordPress 5.4, the block editor opens in fullscreen mode: the admin menu disappears while you write, and getting back to the rest of the dashboard takes an extra click.
 
-**Features:**
+This plugin turns fullscreen mode off, so the block editor opens inside the normal WordPress admin, with the menu on the left, just like every other screen.
 
-* Automatically disables Block Editor fullscreen mode on load
-* Zero configuration — works out of the box
-* Lightweight with no impact on performance
-* Compatible with the latest WordPress version
+= Features =
 
-== More Plugins by the Author ==
+* Opens the block editor with the admin menu in view, every time.
+* Works for every user, and for posts, pages and any post type that uses the block editor.
+* No settings. Activate it and it works.
+* Tiny: one short script in the editor, and nothing at all on your site's front end.
+* Tested with the latest version of WordPress.
 
-If you find this plugin useful, you may also like these free plugins by the same author:
+= How it works =
 
-* [UltimaKit For WP](https://wordpress.org/plugins/ultimakit-for-wp/) — Essential WordPress toolkit
-* [Like Dislike For WP](https://wordpress.org/plugins/like-dislike-for-wp/) — Add like/dislike voting to posts
-* [Hide Admin Bar Based on User Roles](https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/) — Control admin bar visibility by role
-* [Page Visit Counter Analytics](https://wordpress.org/plugins/page-visit-counter-analytics/) — Simple page view tracking
+When the block editor opens, the plugin checks the editor's "Fullscreen mode" preference and switches it off. To use fullscreen mode again, deactivate the plugin.
+
+= More free plugins by the author =
+
+* [NoteFlow](https://wordpress.org/plugins/noteflow/): notes, checklists and team collaboration in your WordPress admin.
+* [Like Dislike](https://wordpress.org/plugins/like-dislike-for-wp/): like and dislike buttons with live counts, "Was this helpful?" votes and stats.
+* [Hide Admin Bar Based on User Roles](https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/): hide the toolbar for the roles you choose.
+* [UltimaKit](https://wordpress.org/plugins/ultimakit-for-wp/): admin tools, security and performance in one plugin.
+* [Page Visit Counter Analytics](https://wordpress.org/plugins/page-visit-counter-analytics/): simple, privacy-friendly page view stats.
 
 == Installation ==
 
-e.g.
-
-1. Upload `disable-block-editor-fullscreen-mode.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. You’re done!
+1. In your admin, go to Plugins → Add New Plugin and search for "Disable Block Editor FullScreen mode".
+2. Click Install Now, then Activate.
+3. Open any post or page. The editor now shows the admin menu.
 
 == Frequently Asked Questions ==
 
-= Is this plugin works on older WP versions? =
+= Does it work on older versions of WordPress? =
 
-Nop, Minimum 5.4 WP Version required.
+It needs WordPress 5.4 or later, the version that made fullscreen the default.
+
+= Can people still use fullscreen mode? =
+
+While the plugin is active, the editor turns fullscreen mode off each time it opens. Deactivate the plugin to use fullscreen mode again.
+
+= Does it change anything on my site? =
+
+No. It only runs in the block editor, in your admin.
+
+= Is there a settings page? =
+
+No. There is nothing to set up.
+
+== Screenshots ==
+
+1. Before and after: in fullscreen mode the editor hides the admin menu; with this plugin it stays in view.
+2. With the plugin, the block editor opens with the admin menu in view.
 
 == Changelog ==
 
-= 4.3.1 - 24-10-2026 =
+= 4.3.2 - 25-09-2026 =
+* The editor script no longer needs jQuery, so it keeps working if WordPress stops loading jQuery Migrate.
+* Messages now use the plugin's own text domain, so they can be translated.
+* New icon and banners, and a clearer description.
+
+= 4.3.1 - 24-09-2026 =
 * Compatibility tested & Tested with the latest WordPress version.
 
 = 4.3.0 - 07-07-2026 =
